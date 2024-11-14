@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>monotipo</title>
+    <link href="estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="fondo"></div>
+    <div>
+        <h1 class="titulo">MonoTipo</h1>
+        <h1 class="score">Resultados</h1>
+    </div>
+    
+    <main>
+        <section id="modo">
+            <div id="modo1" class="seleccionada" onclick="modo_tiempo()">
+                tiempo
+            </div>
+            <div id="modo2" onclick="modo_texto()">
+                palabras
+            </div>
+            
+        </section>
+
+        <section id="type">
+            <span>
+                <h5 id="subir" onclick="subir_tiempo()">+</h5>
+                <h5 id="bajar" onclick="bajar_tiempo()">-</h5>
+                <time></time>
+            </span>
+            <div class="principal">
+                <p></p>
+            </div>
+            
+            <input autofocus id="main_input">
+            <div id="numeropalabras">
+                <numeropal>
+                numero de palabras:
+                    <h5 id="maspalabras" onclick="subir_palabras()">+</h5>
+                    <h5 id="menospalabras" onclick="bajar_palabras()">-</h5>
+                    <span id="totalpal">30</span>
+                </numeropal>
+            </div>
+            <span>
+                <h4 id="to_play">¡Escribe para empezar!</h4>
+            </span>
+        </section>
+
+        <section id="resultados">
+            <span>
+                <h2>wpm</h2>
+                <h3></h3>
+                <h2>precision</h2>
+                <h3></h3>
+            </span>
+            <div class="paraboton">
+                <button id="reintentar" onclick="refresh_game()">
+                    <svg width="48"  height="48"  viewBox="0 0 24 24"  fill="none"  stroke="#ffffff"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
+                        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <div class="opacidad">
+            <div class="slider">
+                <input id="input_opacidad" type="range" min="0" max="100" value="15">
+            </div>
+        </div>
+    </main>
+
+
+    <script src="palabras.js"></script>
+    <script src="modos.js"></script>
+    <script src="codigo.js"></script>
+    <script src="opacidad.js"></script>
+</body>
+</html>

@@ -1,0 +1,333 @@
+:root {
+    --verde: #3dd925;
+    --morado: #ca74ff ;
+    --rojo: #eb5353;
+    --negro: #171717;
+    --gris: #787878;
+}
+
+body {
+    background: var(--negro);
+    font-family: Menlo, monospace;
+    display: grid;
+    padding: 32px;
+    justify-content: center;
+    margin-top: 32;
+    padding: 16px;
+    overflow-y: hidden;
+    zoom: 2.1;
+    color:white;
+}
+
+main {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-width: 500px;
+    position: relative;
+    height:86%;
+}
+
+time {
+    color: var(--morado);
+    user-select: none;
+}
+
+#main_input {
+    z-index: -1234;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px 8px;
+    margin-top: 10px;
+    user-select: none;
+}
+
+letra {
+    color: var(--gris);
+    position: relative;
+
+    &.activa::before {
+        content: "|";
+        color: var(--morado);
+        font-size: 16px;
+        position: absolute;
+        left: -5px;
+        animation: 1.3s blink infinite ease-in-out;
+    }
+
+    &.activa.ultima::before {
+        left: 5px;
+    }
+
+    &.correcta {
+        color:aliceblue;
+    }
+    
+    &.incorrecta {
+        color: var(--rojo);
+    }
+}
+
+@keyframes blink {
+    0%,33% {
+        opacity: 1;
+    }
+
+    66% {
+        opacity: 0;
+    }
+}
+
+.subrayada {
+    text-decoration: underline var(--rojo);
+}
+
+#type {
+    display: block;
+}
+
+#resultados {
+    display: none;
+}
+
+h2 {
+    opacity: 0.5;
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 30px;
+    color: var(--morado);
+    margin: 0;
+}
+
+h4 {
+    color: var(--morado);
+    margin-top: 30px;
+}
+
+div {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#modo {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+#modo1{
+    margin-right:2px;
+    background-color: rgb(95, 95, 95);
+    width: 90px;
+    height: 30px;
+    border-radius: 10px 0px 0px 10px;
+    padding: 10px 0px 0px 0px;
+    color: rgb(163, 163, 163);
+    cursor: pointer;
+}
+
+#modo1:hover {
+    color: white;
+}
+
+#modo2{
+    margin-left:2px;
+    background-color: rgb(95, 95, 95);
+    width: 90px;
+    height: 30px;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px 0px 0px 0px;
+    color: rgb(163, 163, 163);
+    cursor: pointer;
+}
+
+#modo2:hover {
+    color: white;
+}
+
+.seleccionada {
+    color: var(--morado) !important;
+    font-weight: bold;
+}
+
+span {
+    position: relative;
+}
+
+#subir {
+    position: absolute;
+    left: 22px;
+    top: -21px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#bajar {
+    position: absolute;
+    left: -11px;
+    top: -21px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.titulo {
+    margin: 10px;
+}
+
+.score {
+    margin: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    visibility: hidden;
+}
+
+#numeropalabras {
+    margin-top: 25px;
+    margin-bottom: 0px;
+    position: relative;
+    visibility: hidden;
+    user-select: none;
+}
+
+numeropal {
+    margin-bottom: 0px;
+    position: absolute;
+}
+
+#totalpal {
+    color: var(--morado);
+}
+
+#maspalabras {
+    position: absolute;
+    color: white;
+    top: -38px;
+    right: 5px;
+    cursor: pointer;
+}
+
+#menospalabras {
+    position: absolute;
+    color: white;
+    right: 5px;
+    top: -5px;
+    cursor: pointer;
+}
+
+.principal {
+    overflow: hidden;
+    height: 95px;
+    width: 500px;
+    padding: 0px 4px 0px 4px;
+}
+
+
+.paraboton {
+    position: relative;
+    width: 200px;
+}
+
+#reintentar {
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: .5;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#fondo::after {
+    content: "";
+    background: url("images/gatito_fondo.png");
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#fondo {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0.15;
+}
+
+#input_opacidad::-webkit-slider-thumb {
+    background: var(--morado);
+}
+
+#input_opacidad {
+    -webkit-appearance: none;
+    appearance: none;   
+    width: 300px;
+    height: 5px;
+    background: var(--gris);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#input_opacidad::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--morado);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+#input_opacidad::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: var(--morado);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+
+#input_opacidad::-ms-thumb {
+    width: 15px;
+    height: 15px;
+    background: var(--morado);
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+}
+.opacidad {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+}
