@@ -1,1 +1,1 @@
-This is basically a "copy" of the famous https://monkeytype.com/ web. You can test your typing skills and train a bit with different gamemodes and customizations.
+This is basically a "copy" of the famous https://monkeytype.com/ web. You can test your typing skills and train a bit with different gamemodes and customizations. I made it in spanish, but you can change the words dictionary in the 'palabras' file.
